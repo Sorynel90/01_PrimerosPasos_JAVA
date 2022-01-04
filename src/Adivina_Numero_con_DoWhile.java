@@ -8,6 +8,7 @@ public class Adivina_Numero_con_DoWhile {
 		//Generamos un numero aleatorio entre 0 y 100 y lo convertimos a numero entero
 		int aleatorio = (int)(Math.random() * 100);
 		
+		@SuppressWarnings("resource")
 		Scanner entrada = new Scanner(System.in);
 		
 		//Declaramos una variable para solicitar al usuario un numero 

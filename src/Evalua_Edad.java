@@ -4,6 +4,7 @@ public class Evalua_Edad {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		@SuppressWarnings("resource")
 		Scanner entrada = new Scanner(System.in);
 		
 		//Condicional IF-ELSE

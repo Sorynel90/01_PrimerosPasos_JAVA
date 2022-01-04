@@ -5,6 +5,7 @@ public class Areas {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		@SuppressWarnings("resource")
 		Scanner entrada = new Scanner(System.in);
 		
 		System.out.println("Elige una opcion: \n1: Cuadrado \n2: Rectangulo \n3: Triangulo \n4: Circulo");
