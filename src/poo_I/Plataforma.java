@@ -1,4 +1,4 @@
-package poo;
+package poo_I;
 
 public class Plataforma {
 	
@@ -52,7 +52,7 @@ public class Plataforma {
 		//Para almacenar un String en boolean hay que confecionar de otra forma el metodo
 		//this.asientos_cuero = asientos_cuero; //El operador this se utiliza para indicar el atributo de la clase y no el parametro del metodo
 		
-		if(asientos_cuero=="si") {
+		if(asientos_cuero.equalsIgnoreCase("si")) {
 			this.asientos_cuero = true;
 		} else {
 			this.asientos_cuero = false;
@@ -66,6 +66,57 @@ public class Plataforma {
 		} else {
 			return "El coche tiene asientos de serie";
 		}
+	}
+	
+	//Metodo SETTER para el climatizador
+	public void configura_climatizador(String climatizador) {
+		if(climatizador.equalsIgnoreCase("si")) {
+			this.climatizador=true;
+		} else {
+			this.climatizador=false;
+		}
+	}
+	
+	//Metodo GETTER para el climatizador
+	public String dime_climatizador() {
+		if(climatizador==true) {
+			return "El coche incorpora climatizador";
+		} else {
+			return "El coche incorpora aire acondicionado";
+		}
+	}
+	
+	//Metodo SETTER y GETTER al mismo tiempo (practica no recomendada) 
+	public String dime_peso_coche() {
+		int peso_carroceria = 500;
+		peso_total = peso_plataforma + peso_carroceria;
+		
+		if(asientos_cuero==true) {
+			peso_total = peso_total + 50;
+		}
+		
+		if(climatizador==true) {
+			peso_total = peso_total + 20;
+		}
+		
+		return "El peso total del coche es de: " + peso_total + " kg.";
+		
+	}
+	
+	//Metodo GETTER para el precio final
+	public int precio_coche() {
+		int precio_final = 10000;
+		
+		if(asientos_cuero==true) {
+			precio_final += 2000;
+		}
+		
+		if(climatizador==true) {
+			precio_final += 1500;
+		}
+		
+		return precio_final;
+		
 	}
 
 }
