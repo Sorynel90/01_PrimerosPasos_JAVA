@@ -20,6 +20,8 @@ public class Pruebas_Final_Static {
 		System.out.println(trabajador3.devuelveDatos());
 		
 		System.out.println(trabajador4.devuelveDatos());
+		
+		System.out.println(Empleados.dameIdSiguiente());
 
 	}
 
@@ -46,6 +48,12 @@ class Empleados {
 	//Metodo GETTER para el nombre y la seccion
 	public String devuelveDatos() {
 		return "El nombre es: " + nombre + ", la seccion es: " + seccion + " y el id es: " + Id;
+	}
+	
+	//Metodo static (los metodos static no actuan sobre objetos, se llaman a traves del nombre de la clase Empleados.dameIdSiguiente())
+	//Para poder acceder a variables o constantes declaradas estas deben de ser tambien static
+	public static String dameIdSiguiente( ) {
+		return "El Id siguiente es: " + IdSiguiente;
 	}
 	
 	//Metodo SETTER para el nombre

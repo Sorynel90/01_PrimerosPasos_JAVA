@@ -26,12 +26,13 @@ public class Uso_Empleado {
 		*/
 		
 		//Metodo alternativo con Array y bucles FOR para subir de sueldo y pintar
-		Empleado[] misEmpleados = new Empleado[3];
+		Empleado[] misEmpleados = new Empleado[4];
 		
 		//Para almacenar diferentes tipos de datos en un array hay que crear una clase, previamente, donde manejar los tipos de datos deseados
 		misEmpleados[0] = new Empleado("Paco", 25000, 1990, 12, 17);
 		misEmpleados[1] = new Empleado("Pepito", 30000, 1995, 6, 2);
 		misEmpleados[2] = new Empleado("Juanito", 35000, 2002, 3, 15);
+		misEmpleados[3] = new Empleado("Antonio");
 		
 		/* BUCLES FOR TRADICIONALES
 		//Subimos el sueldo de los empleados con un bucle FOR
@@ -50,7 +51,7 @@ public class Uso_Empleado {
 		}
 		
 		for(Empleado e:misEmpleados) {
-			System.out.println("Nombre: " + e.dameNombre() + "\nSueldo: " + e.dameSueldo() + "\nFecha de alta: " + e.dameFechaContrato());
+			System.out.println("Nombre: " + e.dameNombre() + "\nSueldo: " + e.dameSueldo() + "\nFecha de alta: " + e.dameFechaContrato() + "\n");
 		}
 		
 	}
@@ -73,6 +74,11 @@ class Empleado {
 		
 	}
 	
+	//Sobrecargamos el metodo constructor con solo un parametro
+	public Empleado(String nom) {
+		this(nom, 30000, 2000 ,01 ,01); 	//Utilizamos this para llamar al otro constructor de la clase (si hay varios constructores, java elije automaticamente el constructor en funcion de los parametros)
+	}										//Este caso se utiliza para dar un valor predeterminado a determinados parametros
+											//3000 = sue | 2000 = anio | 01 = mes | 01 = dia
 	//Metodo GETTER para el nombre
 	public String dameNombre() {
 		return nombre;
