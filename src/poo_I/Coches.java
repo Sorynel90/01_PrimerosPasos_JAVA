@@ -2,10 +2,11 @@ package poo_I;
 
 import javax.swing.*;
 
-public class Uso_Plataforma_para_VW_Passat {
+public class Coches {
 
 	public static void main(String[] args) {
 		
+		//Nos creamos un objeto de tipo plataforma (coche universal)
 		Plataforma Passat = new Plataforma(); //Instanciar una clase. Ejemplar de clase
 		
 		System.out.println(Passat.largo_plataforma());
@@ -36,6 +37,26 @@ public class Uso_Plataforma_para_VW_Passat {
 		
 		//Pintamos el precio final del coche
 		System.out.println("El precio final del coche es de: " + Passat.precio_coche() + " €");
+		
+		//-------------------------------------------------------------------------------------
+		
+		//Nos creamos un nuevo objeto de tipo Furgoneta
+		Furgoneta mifurgoneta1 = new Furgoneta (7, 580);
+		
+		//Modificamos el color de la furgoneta
+		mifurgoneta1.establece_color("azul");
+		
+		//Definimos climatizador de la furgoneta
+		mifurgoneta1.configura_climatizador("si");
+		
+		//Definimos asientos de la furgoneta
+		mifurgoneta1.configura_asientos("si");
+		
+		//Pintamos los datos de la furgoneta
+		System.out.println("Los datos generales de la furgoneta son: " + mifurgoneta1.dime_datos_generales());
+		
+		//Pintamos los datos especificos de la furgoneta
+		System.out.println("Los datos especificos de la furgoneta son: " + mifurgoneta1.dimeDatosFurgoneta());
 
 	}
 
