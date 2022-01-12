@@ -1,4 +1,6 @@
-package herencia;
+package herencia_Interfaces;
+
+import java.util.Arrays;
 
 public class Uso_Empleado {
 
@@ -25,9 +27,29 @@ public class Uso_Empleado {
 																//Hay que ver la estructura de la herencia ya que no siempre se puede hacer casting d eun tipo a otro
 		
 		
+		System.out.println("El jefe " + jefa_Finanzas.dameNombre() + " tiene un bonus de " + jefa_Finanzas.establece_bonus(500));
+		
+		System.out.println(misEmpleados[3].dameNombre() + " tiene un bonus de: " + misEmpleados[3].establece_bonus(200));
+		
+		/*Empleado director_comercial = new Jefatura("Sandra", 85000, 2012, 05, 05);
+		
+		Comparable ejemplo = new Empleado("Elisabeth", 95000, 2011, 06, 07);		//No se puede instanciar una interfaz pero si se puede utilizar el principio de sustitucion
+		
+		if (director_comercial instanceof Empleado) {
+			System.out.println("Es de tipo Jefatura");
+		}
+		
+		if (ejemplo instanceof Comparable) {
+			System.out.println("Implementa la interfaz COMPARABLE");
+		}*/
+		
+		System.out.println(jefa_Finanzas.tomar_decisiones("Dar mas dias de vacaciones a los empleados."));
+		
 		for(Empleado e:misEmpleados) {
 			e.subeSueldo(5);
 		}
+		
+		Arrays.sort(misEmpleados);
 		
 		for(Empleado e:misEmpleados) {
 			System.out.println("Nombre: " + e.dameNombre() + "\nSueldo: " + e.dameSueldo() + "\nFecha de alta: " + e.dameFechaContrato() + "\n");

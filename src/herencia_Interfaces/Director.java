@@ -1,4 +1,4 @@
-package herencia;
+package herencia_Interfaces;
 
 final class Director extends Jefatura{ //Definimos la clase como "final" para que ninguna otra clase pueda herredar de esta clase
 	

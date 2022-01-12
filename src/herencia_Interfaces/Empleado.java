@@ -1,8 +1,8 @@
-package herencia;
+package herencia_Interfaces;
 
 import java.util.*;
 
-public class Empleado {
+public class Empleado implements Comparable, Trabajadores {
 	
 	private String nom;
 	private double sue;
@@ -29,7 +29,7 @@ public class Empleado {
 		
 	}
 	
-	//Sobrecargamos el metodo constructor con solo un parametro
+		//Sobrecargamos el metodo constructor con solo un parametro
 		public Empleado(String nom) {
 			this(nom, 30000, 2000 ,01 ,01); 	//Utilizamos this para llamar al otro constructor de la clase (si hay varios constructores, java elije automaticamente el constructor en funcion de los parametros)
 		}										//Este caso se utiliza para dar un valor predeterminado a determinados parametros
@@ -54,5 +54,27 @@ public class Empleado {
 			double aumento = sueldo * porcentaje / 100;
 			sueldo += aumento;
 		}
+		
+		//Implementamos el metodo CompareTo ya que como implementamos la interfaz Comparable, JAVA nos obliga a implementar el metodos de la interfaz
+		public int compareTo(Object miObjeto) {
+			
+			Empleado otroEmpleado = (Empleado) miObjeto;
+			
+			if (this.sueldo < otroEmpleado.sueldo) {
+				return -1;
+			} 
+			
+			if (this.sueldo < otroEmpleado.sueldo) {
+				return 1;
+			}
+			
+			return 0;
+			
+			}
 
+		@Override
+		public double establece_bonus(double gratificacion) {
+			return Trabajadores.bonus_base + gratificacion;
+		}
+			
 }

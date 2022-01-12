@@ -1,6 +1,6 @@
-package herencia;
+package herencia_Interfaces;
 
-public class Jefatura extends Empleado{
+public class Jefatura extends Empleado implements Jefes{
 	
 	public Jefatura(String nom, double sue, int anio, int mes, int dia) {
 		
@@ -21,5 +21,17 @@ public class Jefatura extends Empleado{
 	}
 	
 	private double incentivo;
+
+	@Override
+	public String tomar_decisiones(String decision) {
+		
+		return "Un miembro de la direccion ha tomado la decision de: " + decision;
+		
+	}
+	
+	public double establece_bonus(double gratificacion) {
+		double prima = 2000;
+		return Trabajadores.bonus_base + gratificacion + prima;
+	}
 
 }
